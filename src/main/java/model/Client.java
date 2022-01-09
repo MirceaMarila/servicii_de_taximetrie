@@ -2,7 +2,7 @@ package model;
 
 public class Client {
 
-    protected int id;
+    protected long id;
     protected String name;
     protected int nr_of_rides;
     protected double money;
@@ -13,7 +13,7 @@ public class Client {
 
     }
 
-    public Client(int id, String name, int nr_of_rides, double money, int rating, int nr_of_reviews) {
+    public Client(long id, String name, int nr_of_rides, double money, int rating, int nr_of_reviews) {
         this.id = id;
         this.name = name;
         this.nr_of_rides = nr_of_rides;
@@ -22,11 +22,11 @@ public class Client {
         this.nr_of_reviews = nr_of_reviews;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

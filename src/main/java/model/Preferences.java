@@ -2,7 +2,7 @@ package model;
 
 public class Preferences {
 
-    private int id;
+    private long id;
     private MusicalGenres music;
     private int temperature;
     private boolean fast_ride;
@@ -15,7 +15,7 @@ public class Preferences {
         this.water = false;
     }
 
-    public Preferences(int id, MusicalGenres music, int temperature, boolean fast_ride, boolean sandwich, boolean water) {
+    public Preferences(long id, MusicalGenres music, int temperature, boolean fast_ride, boolean sandwich, boolean water) {
         this.id = id;
         this.music = music;
         this.temperature = temperature;
@@ -24,11 +24,11 @@ public class Preferences {
         this.water = water;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -8,7 +8,7 @@ public class Driver extends  Client{
 
     }
 
-    public Driver(int id, String name, Car car, int nr_of_rides, int rating, int nr_of_reviews, double money) {
+    public Driver(long id, String name, Car car, int nr_of_rides, int rating, int nr_of_reviews, double money) {
         super(id, name, nr_of_rides, money, rating, nr_of_reviews);
         this.car = car;
     }

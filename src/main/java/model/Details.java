@@ -4,6 +4,7 @@ import java.time.LocalTime;
 
 public class Details {
 
+    private long id;
     private Driver driver;
     private Client client;
     private Ride ride;
@@ -14,7 +15,8 @@ public class Details {
         this.price = get_ride_price();
     }
 
-    public Details(Driver driver, Client client, Ride ride, Preferences preferences) {
+    public Details(long id, Driver driver, Client client, Ride ride, Preferences preferences) {
+        this.id = id;
         this.driver = driver;
         this.client = client;
         this.ride = ride;
@@ -22,11 +24,19 @@ public class Details {
         this.price = get_ride_price();
     }
 
-    public Driver getSofer() {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Driver getDriver() {
         return driver;
     }
 
-    public void setSofer(Driver driver) {
+    public void setDriver(Driver driver) {
         this.driver = driver;
     }
 
@@ -54,11 +64,11 @@ public class Details {
         this.price = price;
     }
 
-    public Preferences getPreferinte() {
+    public Preferences getPreferences() {
         return preferences;
     }
 
-    public void setPreferinte(Preferences preferences) {
+    public void setPreferences(Preferences preferences) {
         this.preferences = preferences;
     }
 

@@ -9,7 +9,7 @@ public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column(name = "brand")
     private String brand;
@@ -20,33 +20,33 @@ public class Car {
     @Column(name = "color")
     private String color;
 
-    @Column(name = "manufacturing_year")
-    private int manufacturing_year;
+    @Column(name = "year")
+    private int year;
 
     public Car(){
 
     }
 
-    public Car(int id, String brand, String model, String color, int manufacturing_year) {
+    public Car(long id, String brand, String model, String color, int year) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.color = color;
-        this.manufacturing_year = manufacturing_year;
+        this.year = year;
     }
 
-    public Car(String brand, String model, String color, int manufacturing_year) {
+    public Car(String brand, String model, String color, int year) {
         this.brand = brand;
         this.model = model;
         this.color = color;
-        this.manufacturing_year = manufacturing_year;
+        this.year = year;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -74,11 +74,11 @@ public class Car {
         this.color = color;
     }
 
-    public int getManufacturing_year() {
-        return manufacturing_year;
+    public int getYear() {
+        return year;
     }
 
-    public void setManufacturing_year(int manufacturing_year) {
-        this.manufacturing_year = manufacturing_year;
+    public void setYear(int year) {
+        this.year = year;
     }
 }

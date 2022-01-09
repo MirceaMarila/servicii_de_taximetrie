@@ -1,32 +1,30 @@
 package dto;
 
-import javax.persistence.*;
-
 
 public class CarRequest {
 
-    private String marca;
+    private String brand;
     private String model;
-    private String culoare;
-    private int an_fabricatie;
+    private String color;
+    private int year;
 
     public CarRequest(){
 
     }
 
-    public CarRequest(String marca, String model, String culoare, int an_fabricatie) {
-        this.marca = marca;
+    public CarRequest(String brand, String model, String color, int year) {
+        this.brand = brand;
         this.model = model;
-        this.culoare = culoare;
-        this.an_fabricatie = an_fabricatie;
+        this.color = color;
+        this.year = year;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getModel() {
@@ -37,19 +35,19 @@ public class CarRequest {
         this.model = model;
     }
 
-    public String getCuloare() {
-        return culoare;
+    public String getColor() {
+        return color;
     }
 
-    public void setCuloare(String culoare) {
-        this.culoare = culoare;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public int getAn_fabricatie() {
-        return an_fabricatie;
+    public int getYear() {
+        return year;
     }
 
-    public void setAn_fabricatie(int an_fabricatie) {
-        this.an_fabricatie = an_fabricatie;
+    public void setYear(int year) {
+        this.year = year;
     }
 }

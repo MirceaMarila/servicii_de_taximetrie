@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Ride {
 
-    private int id;
+    private long id;
     private String location;
     private String destination;
     private double distance;
@@ -15,7 +15,7 @@ public class Ride {
         this.duration = get_ride_time();
     }
 
-    public Ride(int id, String location, String destination) {
+    public Ride(long id, String location, String destination) {
         this.id = id;
         this.location = location;
         this.destination = destination;
@@ -23,11 +23,11 @@ public class Ride {
         this.duration = get_ride_time();
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
