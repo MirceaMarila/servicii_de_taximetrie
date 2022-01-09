@@ -1,5 +1,5 @@
 package model;
 
-public enum GenuriMuzicale {
+public enum MusicalGenres {
     ROCK, RAP, POP, TECHNO
 }

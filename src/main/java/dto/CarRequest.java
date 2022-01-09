@@ -1,31 +1,24 @@
-package model;
+package dto;
 
-public class Masina {
+import javax.persistence.*;
 
-    private int id;
+
+public class CarRequest {
+
     private String marca;
     private String model;
     private String culoare;
     private int an_fabricatie;
 
-    public Masina(){
+    public CarRequest(){
 
     }
 
-    public Masina(int id, String marca, String model, String culoare, int an_fabricatie) {
-        this.id = id;
+    public CarRequest(String marca, String model, String culoare, int an_fabricatie) {
         this.marca = marca;
         this.model = model;
         this.culoare = culoare;
         this.an_fabricatie = an_fabricatie;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getMarca() {

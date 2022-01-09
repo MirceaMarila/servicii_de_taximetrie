@@ -3,23 +3,23 @@ package model;
 public class Client {
 
     protected int id;
-    protected String prenume;
-    protected int nr_curse;
-    protected double suma_cont_bancar;
+    protected String name;
+    protected int nr_of_rides;
+    protected double money;
     protected int rating;
-    protected int nr_review;
+    protected int nr_of_reviews;
 
     public Client(){
 
     }
 
-    public Client(int id, String prenume, int nr_curse, double suma_cont_bancar, int rating, int nr_review) {
+    public Client(int id, String name, int nr_of_rides, double money, int rating, int nr_of_reviews) {
         this.id = id;
-        this.prenume = prenume;
-        this.nr_curse = nr_curse;
-        this.suma_cont_bancar = suma_cont_bancar;
+        this.name = name;
+        this.nr_of_rides = nr_of_rides;
+        this.money = money;
         this.rating = rating;
-        this.nr_review = nr_review;
+        this.nr_of_reviews = nr_of_reviews;
     }
 
     public int getId() {
@@ -30,28 +30,28 @@ public class Client {
         this.id = id;
     }
 
-    public String getPrenume() {
-        return prenume;
+    public String getName() {
+        return name;
     }
 
-    public void setPrenume(String prenume) {
-        this.prenume = prenume;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getNr_curse() {
-        return nr_curse;
+    public int getNr_of_rides() {
+        return nr_of_rides;
     }
 
-    public void setNr_curse(int nr_curse) {
-        this.nr_curse = nr_curse;
+    public void setNr_of_rides(int nr_of_rides) {
+        this.nr_of_rides = nr_of_rides;
     }
 
-    public double getSuma_cont_bancar() {
-        return suma_cont_bancar;
+    public double getMoney() {
+        return money;
     }
 
-    public void setSuma_cont_bancar(double suma_cont_bancar) {
-        this.suma_cont_bancar = suma_cont_bancar;
+    public void setMoney(double money) {
+        this.money = money;
     }
 
     public int getRating() {
@@ -62,11 +62,11 @@ public class Client {
         this.rating = rating;
     }
 
-    public int getNr_review() {
-        return nr_review;
+    public int getNr_of_reviews() {
+        return nr_of_reviews;
     }
 
-    public void setNr_review(int nr_review) {
-        this.nr_review = nr_review;
+    public void setNr_of_reviews(int nr_of_reviews) {
+        this.nr_of_reviews = nr_of_reviews;
     }
 }
