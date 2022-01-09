@@ -1,6 +1,7 @@
 package model;
 
 import org.hibernate.criterion.DetachedCriteria;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.time.LocalTime;
 
@@ -10,22 +11,18 @@ public class Detalii {
     private Client client;
     private Cursa cursa;
     private double pret;
-    private String muzica;
-    private int temperatura;
-    private boolean cursa_rapida;
+    private Preferinte preferinte;
 
     public Detalii(){
         this.pret = get_ride_price();
     }
 
-    public Detalii(Sofer sofer, Client client, Cursa cursa, String muzica, int temperatura, boolean cursa_rapida) {
+    public Detalii(Sofer sofer, Client client, Cursa cursa, Preferinte preferinte) {
         this.sofer = sofer;
         this.client = client;
         this.cursa = cursa;
+        this.preferinte = preferinte;
         this.pret = get_ride_price();
-        this.muzica = muzica;
-        this.temperatura = temperatura;
-        this.cursa_rapida = cursa_rapida;
     }
 
     public Sofer getSofer() {
@@ -60,28 +57,12 @@ public class Detalii {
         this.pret = pret;
     }
 
-    public String getMuzica() {
-        return muzica;
+    public Preferinte getPreferinte() {
+        return preferinte;
     }
 
-    public void setMuzica(String muzica) {
-        this.muzica = muzica;
-    }
-
-    public int getTemperatura() {
-        return temperatura;
-    }
-
-    public void setTemperatura(int temperatura) {
-        this.temperatura = temperatura;
-    }
-
-    public boolean isCursa_rapida() {
-        return cursa_rapida;
-    }
-
-    public void setCursa_rapida(boolean cursa_rapida) {
-        this.cursa_rapida = cursa_rapida;
+    public void setPreferinte(Preferinte preferinte) {
+        this.preferinte = preferinte;
     }
 
     private double get_ride_price(){
@@ -91,6 +72,12 @@ public class Detalii {
         if(now.getHour() >= 22 || now.getHour() <= 6){
             pret += pret/2;
         }
+
+        if(this.preferinte.getSandwich())
+            pret += 10;
+
+        if(this.preferinte.getApa())
+            pret += 5;
 
         return pret;
     }
