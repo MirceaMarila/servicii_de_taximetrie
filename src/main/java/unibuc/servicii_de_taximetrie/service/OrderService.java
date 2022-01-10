@@ -40,11 +40,13 @@ public class OrderService {
 
         double distance;
         double duration;
+        long rideId;
 
         Ride rideRequested = rideService.getDistanceByDestionationAndLocation(orderRequest.getDestination(), orderRequest.getLocation());
         if(rideRequested != null) {
             distance = rideRequested.getDistance();
             duration = rideRequested.getDuration();
+            rideId = rideRequested.getId();
         }
 
         else{
@@ -53,6 +55,7 @@ public class OrderService {
 
             distance = ride.getDistance();
             duration = ride.getDuration();
+            rideId = ride.getId();
 
             if(orderRequest.isFastRide()){
                 duration -= duration/2;
@@ -100,7 +103,8 @@ public class OrderService {
 
         Details details = new Details(driver.getName(), clientOptional.get().getName(), get_ride_details(orderRequest.getLocation(),
                 orderRequest.getDestination(), distance, duration), get_preferences(orderRequest.isWater(), orderRequest.isSandwich(),
-                orderRequest.getMusic(), orderRequest.getTemperature(), orderRequest.isFastRide()), price, driver.getCarDetails());
+                orderRequest.getMusic(), orderRequest.getTemperature(), orderRequest.isFastRide()), price, driver.getCarDetails(),
+                driver.getId(), clientOptional.get().getId(), rideId);
 
         return detailsService.createDetails(details);
 

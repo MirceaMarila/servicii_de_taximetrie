@@ -29,10 +29,19 @@ public class Details {
     @Column(name = "car_details")
     private String carDetails;
 
+    @Column(name = "driver_id")
+    private long driverId;
+
+    @Column(name = "client_id")
+    private long clientId;
+
+    @Column(name = "ride_id")
+    private long rideId;
+
     public Details(){
     }
 
-    public Details(long id, String driver, String client, String ride, String preferences, double price, String carDetails) {
+    public Details(long id, String driver, String client, String ride, String preferences, double price, String carDetails, long driverId, long clientId, long rideId) {
         this.id = id;
         this.driver = driver;
         this.client = client;
@@ -40,15 +49,21 @@ public class Details {
         this.preferences = preferences;
         this.price = price;
         this.carDetails = carDetails;
+        this.driverId = driverId;
+        this.clientId = clientId;
+        this.rideId = rideId;
     }
 
-    public Details(String driver, String client, String ride, String preferences, double price, String carDetails) {
+    public Details(String driver, String client, String ride, String preferences, double price, String carDetails, long driverId, long clientId, long rideId) {
         this.driver = driver;
         this.client = client;
         this.ride = ride;
         this.preferences = preferences;
         this.price = price;
         this.carDetails = carDetails;
+        this.driverId = driverId;
+        this.clientId = clientId;
+        this.rideId = rideId;
     }
 
     public long getId() {
@@ -105,5 +120,29 @@ public class Details {
 
     public void setCarDetails(String carDetails) {
         this.carDetails = carDetails;
+    }
+
+    public long getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(long driverId) {
+        this.driverId = driverId;
+    }
+
+    public long getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(long clientId) {
+        this.clientId = clientId;
+    }
+
+    public long getRideId() {
+        return rideId;
+    }
+
+    public void setRideId(long rideId) {
+        this.rideId = rideId;
     }
 }
