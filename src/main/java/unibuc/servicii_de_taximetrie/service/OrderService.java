@@ -9,7 +9,6 @@ import unibuc.servicii_de_taximetrie.exception.NotEnaughFoundsException;
 import unibuc.servicii_de_taximetrie.model.*;
 import unibuc.servicii_de_taximetrie.repository.ClientRepository;
 import unibuc.servicii_de_taximetrie.repository.DriverRepository;
-import unibuc.servicii_de_taximetrie.repository.RideRepository;
 
 import java.text.DecimalFormat;
 import java.time.LocalTime;
@@ -24,16 +23,16 @@ public class OrderService {
     private DriverRepository driverRepository;
     private RideService rideService;
     private DriverService driverService;
-    private PreferancesService preferancesService;
+    private PreferencesService preferencesService;
     private DetailsService detailsService;
 
-    public OrderService(ClientRepository clientRepository, DriverRepository driverRepository, RideService rideService, DriverService driverService, PreferancesService preferancesService, DetailsService detailsService) {
+    public OrderService(ClientRepository clientRepository, DriverRepository driverRepository, RideService rideService, DriverService driverService, PreferencesService preferencesService, DetailsService detailsService) {
         this.clientRepository = clientRepository;
         this.driverRepository = driverRepository;
 
         this.rideService = rideService;
         this.driverService = driverService;
-        this.preferancesService = preferancesService;
+        this.preferencesService = preferencesService;
         this.detailsService = detailsService;
     }
 
@@ -97,7 +96,7 @@ public class OrderService {
 
         Preferences preferences = new Preferences(orderRequest.getMusic(), orderRequest.getTemperature(), orderRequest.isFastRide(),
                 orderRequest.isSandwich(), orderRequest.isWater());
-        preferancesService.createPreferences(preferences);
+        preferencesService.createPreferences(preferences);
 
         Details details = new Details(driver.getName(), clientOptional.get().getName(), get_ride_details(orderRequest.getLocation(),
                 orderRequest.getDestination(), distance, duration), get_preferences(orderRequest.isWater(), orderRequest.isSandwich(),

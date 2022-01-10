@@ -9,11 +9,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PreferancesService {
+public class PreferencesService {
 
     private PreferencesRepository preferencesRepository;
 
-    public PreferancesService(PreferencesRepository preferencesRepository){
+    public PreferencesService(PreferencesRepository preferencesRepository){
         this.preferencesRepository = preferencesRepository;
     }
 
