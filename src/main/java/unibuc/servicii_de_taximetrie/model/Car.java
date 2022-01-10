@@ -14,7 +14,7 @@ public class Car {
     @Column(name = "brand")
     private String brand;
 
-    @Column(name = "unibuc/servicii_de_taximetrie/model")
+    @Column(name = "model")
     private String model;
 
     @Column(name = "color")

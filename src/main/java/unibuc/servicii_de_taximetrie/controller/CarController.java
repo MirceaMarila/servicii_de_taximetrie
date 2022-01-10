@@ -8,6 +8,7 @@ import unibuc.servicii_de_taximetrie.service.CarService;
 import unibuc.servicii_de_taximetrie.mapper.CarMapper;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/cars")
@@ -28,9 +29,14 @@ public class CarController {
         return ResponseEntity.created(URI.create("/car/" + createdCar.getId())).body(createdCar);
     }
 
-    @GetMapping("/hello")
-    private String hello(){
-        return "Hello!";
+    @GetMapping("/{id}")
+    public Car car(@PathVariable Long id) {
+        return carService.getCar(id);
+    }
+
+    @GetMapping
+    public List<Car> getCarList(){
+        return carService.getAllCars();
     }
 
 
