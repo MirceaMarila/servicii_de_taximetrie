@@ -1,13 +1,27 @@
 package unibuc.servicii_de_taximetrie.model;
 
+import javax.persistence.*;
 import java.util.Random;
 
+
+@Entity
+@Table(name = "rides")
 public class Ride {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name = "location")
     private String location;
+
+    @Column(name = "destination")
     private String destination;
+
+    @Column(name = "distance")
     private double distance;
+
+    @Column(name = "duration")
     private double duration;
 
     public Ride(){
@@ -17,6 +31,13 @@ public class Ride {
 
     public Ride(long id, String location, String destination) {
         this.id = id;
+        this.location = location;
+        this.destination = destination;
+        this.distance = get_random_distance();
+        this.duration = get_ride_time();
+    }
+
+    public Ride(String location, String destination) {
         this.location = location;
         this.destination = destination;
         this.distance = get_random_distance();

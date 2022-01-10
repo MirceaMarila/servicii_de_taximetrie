@@ -1,27 +1,54 @@
 package unibuc.servicii_de_taximetrie.model;
 
+import javax.persistence.*;
 import java.time.LocalTime;
 
+@Entity
+@Table(name = "details")
 public class Details {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private Driver driver;
-    private Client client;
-    private Ride ride;
+
+    @Column(name = "driver")
+    private String driver;
+
+    @Column(name = "client")
+    private String client;
+
+    @Column(name = "ride")
+    private String ride;
+
+    @Column(name = "price")
     private double price;
-    private Preferences preferences;
+
+    @Column(name = "preferences")
+    private String preferences;
+
+    @Column(name = "car_details")
+    private String carDetails;
 
     public Details(){
-        this.price = get_ride_price();
     }
 
-    public Details(long id, Driver driver, Client client, Ride ride, Preferences preferences) {
+    public Details(long id, String driver, String client, String ride, String preferences, double price, String carDetails) {
         this.id = id;
         this.driver = driver;
         this.client = client;
         this.ride = ride;
         this.preferences = preferences;
-        this.price = get_ride_price();
+        this.price = price;
+        this.carDetails = carDetails;
+    }
+
+    public Details(String driver, String client, String ride, String preferences, double price, String carDetails) {
+        this.driver = driver;
+        this.client = client;
+        this.ride = ride;
+        this.preferences = preferences;
+        this.price = price;
+        this.carDetails = carDetails;
     }
 
     public long getId() {
@@ -32,27 +59,27 @@ public class Details {
         this.id = id;
     }
 
-    public Driver getDriver() {
+    public String getDriver() {
         return driver;
     }
 
-    public void setDriver(Driver driver) {
+    public void setDriver(String driver) {
         this.driver = driver;
     }
 
-    public Client getClient() {
+    public String getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(String client) {
         this.client = client;
     }
 
-    public Ride getRide() {
+    public String getRide() {
         return ride;
     }
 
-    public void setRide(Ride ride) {
+    public void setRide(String ride) {
         this.ride = ride;
     }
 
@@ -64,28 +91,19 @@ public class Details {
         this.price = price;
     }
 
-    public Preferences getPreferences() {
+    public String getPreferences() {
         return preferences;
     }
 
-    public void setPreferences(Preferences preferences) {
+    public void setPreferences(String preferences) {
         this.preferences = preferences;
     }
 
-    private double get_ride_price(){
-        double pret = this.ride.getDistance() * 2;
-        LocalTime now = LocalTime.now();
+    public String getCarDetails() {
+        return carDetails;
+    }
 
-        if(now.getHour() >= 22 || now.getHour() <= 6){
-            pret += pret/2;
-        }
-
-        if(this.preferences.getSandwich())
-            pret += 10;
-
-        if(this.preferences.getWater())
-            pret += 5;
-
-        return pret;
+    public void setCarDetails(String carDetails) {
+        this.carDetails = carDetails;
     }
 }

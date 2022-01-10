@@ -22,13 +22,6 @@ public class CarController {
         this.carMapper = carMapper;
     }
 
-    @PostMapping
-    public ResponseEntity<Car> createCar(@RequestBody CarRequest carRequest) {
-        Car car = carMapper.carRequestToCar(carRequest);
-        Car createdCar = carService.createCar(car);
-        return ResponseEntity.created(URI.create("/car/" + createdCar.getId())).body(createdCar);
-    }
-
     @GetMapping("/{id}")
     public Car car(@PathVariable Long id) {
         return carService.getCar(id);
