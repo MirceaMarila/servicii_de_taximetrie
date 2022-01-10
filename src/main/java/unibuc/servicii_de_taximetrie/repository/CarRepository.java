@@ -1,10 +1,8 @@
-package repository;
+package unibuc.servicii_de_taximetrie.repository;
 
-import model.Car;
+import unibuc.servicii_de_taximetrie.model.Car;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.*;
-
-import java.util.List;
 
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {

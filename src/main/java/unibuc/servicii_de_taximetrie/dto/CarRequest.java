@@ -1,4 +1,4 @@
-package dto;
+package unibuc.servicii_de_taximetrie.dto;
 
 
 public class CarRequest {

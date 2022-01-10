@@ -1,8 +1,8 @@
-package service;
+package unibuc.servicii_de_taximetrie.service;
 
-import model.Car;
+import unibuc.servicii_de_taximetrie.model.Car;
 import org.springframework.stereotype.Service;
-import repository.CarRepository;
+import unibuc.servicii_de_taximetrie.repository.CarRepository;
 
 @Service
 public class CarService {

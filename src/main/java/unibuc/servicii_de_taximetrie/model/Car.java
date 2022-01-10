@@ -1,4 +1,4 @@
-package model;
+package unibuc.servicii_de_taximetrie.model;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -14,7 +14,7 @@ public class Car {
     @Column(name = "brand")
     private String brand;
 
-    @Column(name = "model")
+    @Column(name = "unibuc/servicii_de_taximetrie/model")
     private String model;
 
     @Column(name = "color")

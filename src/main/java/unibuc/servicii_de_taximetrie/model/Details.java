@@ -1,4 +1,4 @@
-package model;
+package unibuc.servicii_de_taximetrie.model;
 
 import java.time.LocalTime;
 

@@ -1,11 +1,11 @@
-package controller;
+package unibuc.servicii_de_taximetrie.controller;
 
-import dto.CarRequest;
-import mapper.CarMapper;
-import model.Car;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.CarService;
+import unibuc.servicii_de_taximetrie.dto.CarRequest;
+import unibuc.servicii_de_taximetrie.model.Car;
+import unibuc.servicii_de_taximetrie.service.CarService;
+import unibuc.servicii_de_taximetrie.mapper.CarMapper;
 
 import java.net.URI;
 

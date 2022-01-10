@@ -1,7 +1,7 @@
-package mapper;
+package unibuc.servicii_de_taximetrie.mapper;
 
-import dto.CarRequest;
-import model.Car;
+import unibuc.servicii_de_taximetrie.dto.CarRequest;
+import unibuc.servicii_de_taximetrie.model.Car;
 import org.springframework.stereotype.Component;
 
 @Component
