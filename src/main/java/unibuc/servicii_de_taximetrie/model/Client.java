@@ -1,12 +1,28 @@
 package unibuc.servicii_de_taximetrie.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "clients")
 public class Client {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long id;
+
+    @Column(name = "name")
     protected String name;
+
+    @Column(name = "nr_of_rides")
     protected int nr_of_rides;
+
+    @Column(name = "money")
     protected double money;
+
+    @Column(name = "rating")
     protected int rating;
+
+    @Column(name = "nr_of_reviews")
     protected int nr_of_reviews;
 
     public Client(){
@@ -15,6 +31,14 @@ public class Client {
 
     public Client(long id, String name, int nr_of_rides, double money, int rating, int nr_of_reviews) {
         this.id = id;
+        this.name = name;
+        this.nr_of_rides = nr_of_rides;
+        this.money = money;
+        this.rating = rating;
+        this.nr_of_reviews = nr_of_reviews;
+    }
+
+    public Client(String name, int nr_of_rides, double money, int rating, int nr_of_reviews) {
         this.name = name;
         this.nr_of_rides = nr_of_rides;
         this.money = money;
