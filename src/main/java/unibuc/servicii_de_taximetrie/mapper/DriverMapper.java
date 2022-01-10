@@ -8,6 +8,6 @@ import unibuc.servicii_de_taximetrie.model.Driver;
 public class DriverMapper {
 
     public Driver driverRequestToDriver(DriverRequest driverRequest){
-        return new Driver(driverRequest.getName(), driverRequest.get_car_details(), 0, 0, 0, driverRequest.getMoney());
+        return new Driver(driverRequest.getName(), driverRequest.get_car_details(), 0, driverRequest.getMoney(), 0, 0);
     }
 }
