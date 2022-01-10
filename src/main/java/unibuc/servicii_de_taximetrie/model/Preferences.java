@@ -5,21 +5,21 @@ public class Preferences {
     private long id;
     private MusicalGenres music;
     private int temperature;
-    private boolean fast_ride;
+    private boolean fastRide;
     private boolean sandwich;
     private boolean water;
 
     public Preferences(){
-        this.fast_ride = false;
+        this.fastRide = false;
         this.sandwich = false;
         this.water = false;
     }
 
-    public Preferences(long id, MusicalGenres music, int temperature, boolean fast_ride, boolean sandwich, boolean water) {
+    public Preferences(long id, MusicalGenres music, int temperature, boolean fastRide, boolean sandwich, boolean water) {
         this.id = id;
         this.music = music;
         this.temperature = temperature;
-        this.fast_ride = fast_ride;
+        this.fastRide = fastRide;
         this.sandwich = sandwich;
         this.water = water;
     }
@@ -48,12 +48,12 @@ public class Preferences {
         this.temperature = temperature;
     }
 
-    public boolean isFast_ride() {
-        return fast_ride;
+    public boolean isFastRide() {
+        return fastRide;
     }
 
-    public void setFast_ride(boolean fast_ride) {
-        this.fast_ride = fast_ride;
+    public void setFastRide(boolean fastRide) {
+        this.fastRide = fastRide;
     }
 
     public boolean getSandwich() {

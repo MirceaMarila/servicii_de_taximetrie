@@ -1,45 +1,47 @@
 package unibuc.servicii_de_taximetrie.dto;
 
 
+import unibuc.servicii_de_taximetrie.model.CarColors;
+
 public class CarRequest {
 
-    private String brand;
-    private String model;
-    private String color;
+    private String brandModel;
+    private String plate;
+    private CarColors color;
     private int year;
 
     public CarRequest(){
 
     }
 
-    public CarRequest(String brand, String model, String color, int year) {
-        this.brand = brand;
-        this.model = model;
+    public CarRequest(String brandModel, String plate, CarColors color, int year) {
+        this.brandModel = brandModel;
+        this.plate = plate;
         this.color = color;
         this.year = year;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getBrandModel() {
+        return brandModel;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setBrandModel(String brandModel) {
+        this.brandModel = brandModel;
     }
 
-    public String getModel() {
-        return model;
+    public String getPlate() {
+        return plate;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setPlate(String plate) {
+        this.plate = plate;
     }
 
-    public String getColor() {
+    public CarColors getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(CarColors color) {
         this.color = color;
     }
 

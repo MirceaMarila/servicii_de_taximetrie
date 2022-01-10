@@ -11,14 +11,15 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "brand")
-    private String brand;
+    @Column(name = "brand_model")
+    private String brandModel;
 
-    @Column(name = "model")
-    private String model;
+    @Column(name = "plate")
+    private String plate;
 
     @Column(name = "color")
-    private String color;
+    @Enumerated(EnumType.STRING)
+    private CarColors color;
 
     @Column(name = "year")
     private int year;
@@ -27,17 +28,17 @@ public class Car {
 
     }
 
-    public Car(long id, String brand, String model, String color, int year) {
+    public Car(long id, String brandModel, String plate, CarColors color, int year) {
         this.id = id;
-        this.brand = brand;
-        this.model = model;
+        this.brandModel = brandModel;
+        this.plate = plate;
         this.color = color;
         this.year = year;
     }
 
-    public Car(String brand, String model, String color, int year) {
-        this.brand = brand;
-        this.model = model;
+    public Car(String brandModel, String plate, CarColors color, int year) {
+        this.brandModel = brandModel;
+        this.plate = plate;
         this.color = color;
         this.year = year;
     }
@@ -50,27 +51,27 @@ public class Car {
         this.id = id;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getBrandModel() {
+        return brandModel;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setBrandModel(String brandModel) {
+        this.brandModel = brandModel;
     }
 
-    public String getModel() {
-        return model;
+    public String getPlate() {
+        return plate;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setPlate(String plate) {
+        this.plate = plate;
     }
 
-    public String getColor() {
+    public CarColors getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(CarColors color) {
         this.color = color;
     }
 

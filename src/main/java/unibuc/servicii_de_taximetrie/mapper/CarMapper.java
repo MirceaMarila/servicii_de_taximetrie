@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 public class CarMapper {
 
     public Car carRequestToCar(CarRequest carRequest){
-        return new Car(carRequest.getBrand(), carRequest.getModel(), carRequest.getColor(), carRequest.getYear());
+        return new Car(carRequest.getBrandModel(), carRequest.getPlate(), carRequest.getColor(), carRequest.getYear());
     }
 }

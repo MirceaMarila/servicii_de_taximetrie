@@ -10,6 +10,7 @@ import unibuc.servicii_de_taximetrie.service.ClientService;
 import java.net.URI;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/clients")
 public class ClientController {

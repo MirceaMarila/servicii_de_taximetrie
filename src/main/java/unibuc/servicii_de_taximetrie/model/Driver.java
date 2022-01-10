@@ -1,24 +1,35 @@
 package unibuc.servicii_de_taximetrie.model;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "drivers")
 public class Driver extends  Client{
 
-    private Car car;
+    @Column(name = "car_details")
+    private String carDetails;
 
     public Driver(){
 
     }
 
-    public Driver(long id, String name, Car car, int nr_of_rides, int rating, int nr_of_reviews, double money) {
+    public Driver(long id, String name, String carDetails, int nr_of_rides, int rating, int nr_of_reviews, double money) {
         super(id, name, nr_of_rides, money, rating, nr_of_reviews);
-        this.car = car;
+        this.carDetails = carDetails;
     }
 
-    public Car getCar() {
-        return car;
+    public Driver(String name, String carDetails, int nr_of_rides, int rating, int nr_of_reviews, double money) {
+        super(name, nr_of_rides, money, rating, nr_of_reviews);
+        this.carDetails = carDetails;
     }
 
-    public void setCar(Car car) {
-        this.car = car;
+    public String getCarDetails() {
+        return carDetails;
+    }
+
+    public void setCarDetails(String car_details) {
+        this.carDetails = car_details;
     }
 
 }

@@ -14,36 +14,36 @@ public class Client {
     protected String name;
 
     @Column(name = "nr_of_rides")
-    protected int nr_of_rides;
+    protected int nrOfRides;
 
     @Column(name = "money")
     protected double money;
 
     @Column(name = "rating")
-    protected int rating;
+    protected double rating;
 
     @Column(name = "nr_of_reviews")
-    protected int nr_of_reviews;
+    protected int nrOfReviews;
 
     public Client(){
 
     }
 
-    public Client(long id, String name, int nr_of_rides, double money, int rating, int nr_of_reviews) {
+    public Client(long id, String name, int nrOfRides, double money, double rating, int nrOfReviews) {
         this.id = id;
         this.name = name;
-        this.nr_of_rides = nr_of_rides;
+        this.nrOfRides = nrOfRides;
         this.money = money;
         this.rating = rating;
-        this.nr_of_reviews = nr_of_reviews;
+        this.nrOfReviews = nrOfReviews;
     }
 
-    public Client(String name, int nr_of_rides, double money, int rating, int nr_of_reviews) {
+    public Client(String name, int nrOfRides, double money, double rating, int nrOfReviews) {
         this.name = name;
-        this.nr_of_rides = nr_of_rides;
+        this.nrOfRides = nrOfRides;
         this.money = money;
         this.rating = rating;
-        this.nr_of_reviews = nr_of_reviews;
+        this.nrOfReviews = nrOfReviews;
     }
 
     public long getId() {
@@ -62,12 +62,12 @@ public class Client {
         this.name = name;
     }
 
-    public int getNr_of_rides() {
-        return nr_of_rides;
+    public int getNrOfRides() {
+        return nrOfRides;
     }
 
-    public void setNr_of_rides(int nr_of_rides) {
-        this.nr_of_rides = nr_of_rides;
+    public void setNrOfRides(int nrOfRides) {
+        this.nrOfRides = nrOfRides;
     }
 
     public double getMoney() {
@@ -78,19 +78,19 @@ public class Client {
         this.money = money;
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
-    public int getNr_of_reviews() {
-        return nr_of_reviews;
+    public int getNrOfReviews() {
+        return nrOfReviews;
     }
 
-    public void setNr_of_reviews(int nr_of_reviews) {
-        this.nr_of_reviews = nr_of_reviews;
+    public void setNrOfReviews(int nrOfReviews) {
+        this.nrOfReviews = nrOfReviews;
     }
 }
