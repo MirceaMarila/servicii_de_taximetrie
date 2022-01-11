@@ -51,5 +51,8 @@ public class DriverController {
         return driverService.getAllDrivers();
     }
 
+    @GetMapping("/{id}/car")
+    public Car car(@PathVariable Long id){return carService.getDriverCar(id);}
+
 
 }

@@ -2,6 +2,7 @@ package unibuc.servicii_de_taximetrie.model;
 
 import javax.persistence.*;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 @Table(name = "details")
@@ -37,6 +38,7 @@ public class Details {
 
     @Column(name = "ride_id")
     private long rideId;
+
 
     public Details(){
     }

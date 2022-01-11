@@ -56,10 +56,10 @@ public class OrderService {
             distance = ride.getDistance();
             duration = ride.getDuration();
             rideId = ride.getId();
+        }
 
-            if(orderRequest.isFastRide()){
-                duration -= duration/2;
-            }
+        if(orderRequest.isFastRide()){
+            duration -= duration/2;
         }
 
         double price = get_ride_price(distance, orderRequest.isSandwich(), orderRequest.isWater());

@@ -7,9 +7,11 @@ import unibuc.servicii_de_taximetrie.model.Car;
 import unibuc.servicii_de_taximetrie.model.Client;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
+
 
 
 }
