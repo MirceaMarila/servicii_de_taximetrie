@@ -1,9 +1,19 @@
 package unibuc.servicii_de_taximetrie.dto;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class DriverRequest {
 
+    @NotNull
     private CarRequest car;
+
+    @NotEmpty
     private String name;
+
+    @NotNull
+    @Min(0)
     private double money;
 
     public DriverRequest(){

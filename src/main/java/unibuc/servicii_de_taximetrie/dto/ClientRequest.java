@@ -2,10 +2,17 @@ package unibuc.servicii_de_taximetrie.dto;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class ClientRequest {
 
-    @NotBlank
+    @NotEmpty
     protected String name;
+
+    @NotNull
+    @Min(0)
     protected double money;
 
     public ClientRequest(){
