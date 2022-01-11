@@ -14,4 +14,5 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     @Query(value = "select * from cars c join drivers d where c.id = d.id and d.id = :id", nativeQuery = true)
     Optional<Car> getDriverCar(long id);
 
+
 }
